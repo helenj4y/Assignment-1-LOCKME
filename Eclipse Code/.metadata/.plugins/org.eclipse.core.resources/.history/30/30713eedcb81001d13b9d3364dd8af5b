@@ -1,0 +1,13 @@
+package com;
+
+public class LockMe {
+
+	public static void main(String[] args) throws Exception{
+		System.out.println("WELCOME to LOCKME.COM");
+		System.out.println("FILE MANAGEMENT TOOLS");
+		System.out.println("**********************");
+		
+
+	}
+
+}

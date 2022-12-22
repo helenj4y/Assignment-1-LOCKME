@@ -1,0 +1,22 @@
+package com;
+
+import java.io.File;
+
+public class LockMe {
+
+	public static void main(String[] args) throws Exception{
+		System.out.println("WELCOME to LOCKME.COM");
+		System.out.println("FILE MANAGEMENT TOOLS");
+		System.out.println("**********************");
+		
+		File ff = new File("/home/helenabtjmayban/Desktop/Assignment Phase 1/MainFile/");
+		
+		if (ff.isDirectory()) {
+			System.out.println("True");
+		} else {
+			System.out.println("False");
+		}
+
+	}
+
+}

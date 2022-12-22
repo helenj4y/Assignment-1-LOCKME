@@ -1,0 +1,130 @@
+package com;
+
+import java.io.File;
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Scanner;
+
+
+
+public class LockMe {
+	
+	public static void display() {
+		
+		System.out.println("PLEASE ENTER OPTION");
+		System.out.println("OPTION 1: Retrieve all file in ascending order");
+		System.out.println("OPTION 2  Add new file");
+		System.out.println("OPTION 3: Delete file");
+		System.out.println("OPTION 4: Search file");
+		System.out.println("OPTION 5: Exit");
+	}
+	
+	static final String path = "/home/helenabtjmayban/Desktop/Assignment Phase 1/FileFolder/";
+	
+	public static void main(String[] args) throws Exception{
+		System.out.println("WELCOME to LOCKME.COM");
+		System.out.println("FILE MANAGEMENT TOOLS");
+		System.out.println("**********************");
+		Scanner sc = new Scanner(System.in);
+		int opt = 0;
+		display();
+		do {
+			opt = sc.nextInt();
+	//		display();
+			
+			switch (opt) {
+			case 1:
+				System.out.println("RETRIEVE ALL FILES IN ASCENDING ORDER");
+				
+				File fff = new File(path);
+				String listoffiles[] = fff.list();
+				Arrays.sort(listoffiles);
+				System.out.println("List of files in ascending order:"+fff.getAbsolutePath());
+				for (String fname : listoffiles) {
+					System.out.println(fname);
+				}
+				System.out.println("Do you want to continue? Y/N");
+				Scanner scyn = new Scanner(System.in);
+				String yn = scyn.nextLine();
+				String ynupper = yn.toUpperCase();
+				if (ynupper.equals("Y")) {
+					display();
+				}else {
+					System.out.println("EXIT SYSTEM. SEE YOU AGAIN");
+				}
+					
+				break;
+				
+			case 2:
+				System.out.println("ADD NEW FILE");
+				Scanner sc1 = new Scanner(System.in);
+				String f1 = sc1.nextLine();
+				
+				File ff1 = new File(path +f1);
+				
+				if (ff1.createNewFile()) {
+					System.out.println("File created");
+				} else {
+					System.out.println(f1 +" file exists. Please create another new file");
+				}		
+							
+				break;
+
+			case 3:
+				System.out.println("DELETE FILE");
+				Scanner sc2 = new Scanner(System.in);
+				String f2 = sc2.nextLine();
+				
+				File ff2 = new File(path +f2);
+				
+				if (ff2.delete()) {
+					System.out.println("File deleted");
+				} else {
+					System.out.println(f2 +" not found. Please try again");
+				}		
+							
+				break;
+			
+			case 4:
+				System.out.println("SEARCH FILE");
+				System.out.println("ENTER FILE NAME TO SEARCH");
+				Scanner sc3 = new Scanner(System.in);
+				String f3 = sc3.next();
+				File ff3 = new File(path +f3);
+				
+				if (ff3.exists()) {
+					System.out.println("File exist");
+				} else {
+					System.out.println("File not found. Please try again");
+				}
+				break;
+			case 5:
+				System.out.println("EXIT SYSTEM. SEE YOU AGAIN");
+			
+				break;
+				
+			default:
+				System.out.println("WRONG OPTION SELECTED");
+				break;
+			}
+
+		} while (opt>0);	
+//		System.out.println("See YOU");
+		sc.close();
+//		
+		
+		
+		
+		
+//		File ff = new File("/home/helenabtjmayban/Desktop/Assignment Phase 1/FileFolder/");
+		
+			
+		
+//		if (opt < 1 || opt >5) {
+//			System.out.println("Please key in value 1 to 5 only");
+//		}
+//			
+		
+	}
+
+}

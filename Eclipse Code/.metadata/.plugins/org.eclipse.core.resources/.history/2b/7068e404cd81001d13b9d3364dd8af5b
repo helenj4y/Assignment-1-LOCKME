@@ -1,0 +1,28 @@
+package com;
+
+import java.io.File;
+
+public class LockMe {
+
+	public static void main(String[] args) throws Exception{
+		System.out.println("WELCOME to LOCKME.COM");
+		System.out.println("FILE MANAGEMENT TOOLS");
+		System.out.println("**********************");
+		
+		File ff = new File("/home/helenabtjmayban/Desktop/Assignment Phase 1/MainFile/");
+		
+		if (ff.isDirectory()) {
+			
+			System.out.println("Please input your Option:");
+			System.out.println("Option 1: Retrieve all file in ascending order");
+			System.out.println("Option 2: Create new file");
+			System.out.println("Option 3: Delete file");
+			System.out.println("Option 4: Search the file");
+			System.out.println("Option 5: Exit");
+		} else {
+			System.out.println("False");
+		}
+
+	}
+
+}
