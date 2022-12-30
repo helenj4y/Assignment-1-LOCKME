@@ -16,16 +16,11 @@ public class LockMe {
 		System.out.println("OPTION 3: Delete file");
 		System.out.println("OPTION 4: Search file");
 		System.out.println("OPTION 5: Exit");
-		System.out.println("------------------");
-		System.out.println("OPTION SELECTED : ");
-		System.out.println("------------------");
 	}
 	
 	public static void proceed() {
 		
-		System.out.println("-------------------------------");
 		System.out.println("Continue? Press Y for Main Menu");
-		System.out.println("-------------------------------");
 		Scanner scyn = new Scanner(System.in);
 		String inp = scyn.nextLine();
 		String inp1 = inp.toUpperCase();
